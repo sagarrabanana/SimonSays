@@ -16,7 +16,7 @@ int GameStatus;
 long timeNow = 0;
 long previousTime = 0;
 
-int piezoPin = 6;//en realidad es el 6
+int piezoPin = 6;
 
 int delayT1 = 100;
 int delayT2 = 300;
@@ -130,7 +130,6 @@ int botonEspera(int espera)
         butonPressed = pin;
         digitalWrite(led[pin], HIGH);
         tono(pin, piezoPin);
-        //delay(10); //a ver si asi evito el fallo loco
         while (timeNow - previousTime < espera & buttonBackUp == false)
         {
           input = digitalRead(buton[pin]);
